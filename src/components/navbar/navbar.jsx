@@ -1,11 +1,10 @@
 import React from "react";
 import "./navbar.css";
-import logo from "../../assets/logo.jpg";
 
 function Navbar() {
   return (
     <div className="navbar">
-      <img src={logo} alt="logo" />
+      <h1 className="logo">MOCKCRYPTO</h1>
       <ul>
         <li>Home</li>
         <li>Featured</li>
