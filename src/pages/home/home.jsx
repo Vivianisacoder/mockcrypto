@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./home.css";
 import { CoinContext } from "../../context/coincontext";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const { allCoin, currency } = useContext(CoinContext);
@@ -14,6 +15,9 @@ const Home = () => {
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
+    if (event.target.value === "") {
+      setDisplayCoin(allCoin);
+    }
   };
 
   const filteredCoins = displayCoin.filter((coin) =>
@@ -38,7 +42,16 @@ const Home = () => {
               placeholder="Search Crypto.."
               value={searchTerm}
               onChange={handleSearch}
+              list="coinlist"
+              required
             />
+
+            <datalist id="coinlist">
+              {allCoin.map((item, index) => (
+                <option key={index} value={item.name} />
+              ))}
+            </datalist>
+
             <button type="submit">Search</button>
           </form>
         </div>
@@ -52,7 +65,7 @@ const Home = () => {
             <p className="market-cap">Market Cap</p>
           </div>
           {filteredCoins.slice(0, 10).map((item, index) => (
-            <div className="table-layout" key={index}>
+            <Link to={`/coin/${item.id}`} className="table-layout" key={index}>
               <p>{item.market_cap_rank}</p>
               <div className="coin-name">
                 <img src={item.image} alt="" />
@@ -74,7 +87,7 @@ const Home = () => {
                 {currency.symbol}
                 {item.market_cap.toLocaleString()}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

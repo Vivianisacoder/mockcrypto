@@ -9,7 +9,7 @@
 
 .navbar .logo {
   width: max(12vw, 120px);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   color: #fff;
   text-decoration: none;
@@ -60,4 +60,32 @@
 
 .navbar button fa {
   width: 13px;
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 20px 8%;
+  }
+  .navbar button {
+    gap: 8px;
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 5%;
+  }
+  .navbar ul {
+    display: none;
+  }
+
+  .navbar button logo {
+    width: 10px;
+  }
+
+  .navbar .logo {
+    font-size: 15px;
+  }
 }

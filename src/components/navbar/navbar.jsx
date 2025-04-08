@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./navbar.css";
 import { CoinContext } from "../../context/coincontext";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { setCurrency } = useContext(CoinContext);
@@ -24,9 +25,13 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <h1 className="logo">MOCKCRYPTO</h1>
+      <Link to={`/`}>
+        <h1 className="logo">MOCKCRYPTO</h1>
+      </Link>
       <ul>
-        <li>Home</li>
+        <Link to={`/`}>
+          <li>Home</li>
+        </Link>
         <li>Featured</li>
         <li>Pricing</li>
         <li>Blog</li>
