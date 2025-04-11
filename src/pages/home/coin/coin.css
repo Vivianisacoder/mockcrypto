@@ -37,7 +37,42 @@
   max-width: 100px;
 }
 
-.coin-page-name p {
+.coin-page-name p b {
   font-size: 44px;
   font-weight: 500;
+}
+
+.coin-chart {
+  max-width: 800px; /* Increase the max-width for better visibility */
+  width: 100%; /* Make it responsive */
+  margin: auto; /* Add spacing around the chart */
+  padding: 20px; /* Add padding for better spacing */
+  background-color: #f9f9f9; /* Add a light background for contrast */
+  border: 1px solid #ddd; /* Add a subtle border */
+  border-radius: 10px; /* Add rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+}
+
+.coin-chart canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.coin-info {
+  max-width: 600px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.coin-info ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+  border-bottom: 1px solid #5f5d5f;
+  list-style: none;
+}
+
+.coin-info ul li:last-child {
+  font-weight: 300;
 }
